@@ -5,7 +5,7 @@ for bnei Noach around the world
 
 ## Feature Goals
 
-- openID login
+- everyauth/openID login
 - HTML5 geolocation
 - user limited personal information and location
 - search for other users
