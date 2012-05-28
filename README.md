@@ -7,6 +7,6 @@ for bnei Noach around the world
 
 - everyauth/openID login
 - HTML5 geolocation
-- user limited personal information and location
+- limited user personal information and location
 - search for other users
 - Google Maps API implementation for visual search
