@@ -8,5 +8,6 @@ for bnei Noach around the world
 - everyauth/openID login
 - HTML5 geolocation
 - limited user personal information and location
+    - use [Unhosted](http://unhosted.org/)
 - search for other users
 - Google Maps API implementation for visual search
