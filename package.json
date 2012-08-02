@@ -2,14 +2,32 @@
   "name": "bneiNoachDB",
   "version": "0.0.1",
   "description": "A database for bnei Noach to find each other easily",
-  "author": "James Gosnell <jamesgosnell@gmail.com>",
-  "repository": { "type": "git", "url": "https://github.com/EhevuTov/bneiNoachDB.git"},
+  "author": {
+    "name": "James Gosnell",
+    "email": "jamesgosnell@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EhevuTov/bneiNoachDB.git"
+  },
+  "bin": {
+    "app.js": "app.js"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
-    "express": "~3.x",
+    "express": "~3",
     "everyauth": "*",
     "jade": "*"
   },
-  "devDependencies": {
+  "devDependencies": {},
+  "engines": {
+    "node": "~0.6"
   },
-  "engine": "~0.6.x"
+  "subdomain": "bneinoachdb.ehevutov",
+  "domains": [
+    "theark.info",
+    "www.theark.info"
+  ]
 }
