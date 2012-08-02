@@ -5,12 +5,11 @@
   "author": "James Gosnell <jamesgosnell@gmail.com>",
   "repository": { "type": "git", "url": "https://github.com/EhevuTov/bneiNoachDB.git"},
   "dependencies": {
-    "express": ">= 0.2.x",
-    "everyauth": ">0.2.x",
-    "jade": ">0.26.x"
+    "express": "~3.x",
+    "everyauth": "*",
+    "jade": "*"
   },
   "devDependencies": {
-    "vows": ">= 0.5.x"
   },
-  "engine": "node >= 0.4.x"
+  "engine": "~0.6.x"
 }
