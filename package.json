@@ -1,5 +1,5 @@
 {
-  "name": "bneiNoachDB",
+  "name": "theArk",
   "version": "0.0.1",
   "private": true,
   "description": "A database for bnei Noach to find each other easily",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/EhevuTov/bneiNoachDB.git"
+    "url": "https://github.com/EhevuTov/theArk.git"
   },
   "bin": {
     "app.js": "app.js"
@@ -26,7 +26,7 @@
   "engines": {
     "node": ">=0.6"
   },
-  "subdomain": "bneinoachdb.ehevutov",
+  "subdomain": "theark.ehevutov",
   "domains": [
     "theark.info",
     "www.theark.info"

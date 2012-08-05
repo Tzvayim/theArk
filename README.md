@@ -1,4 +1,4 @@
-# Bnei Noach Database
+# [The Ark](http://theark.info): the Bnei Noach Database
 
 This is a web application and backend to provide location and information
 for bnei Noach around the world
