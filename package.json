@@ -1,6 +1,7 @@
 {
   "name": "bneiNoachDB",
   "version": "0.0.1",
+  "private": true,
   "description": "A database for bnei Noach to find each other easily",
   "author": {
     "name": "James Gosnell",
@@ -17,13 +18,13 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "~3",
-    "everyauth": "*",
-    "jade": "*"
+    "express": "3.0.0rc2",
+    "jade": "*",
+    "everyauth": "*"
   },
   "devDependencies": {},
   "engines": {
-    "node": "~0.6"
+    "node": ">=0.6"
   },
   "subdomain": "bneinoachdb.ehevutov",
   "domains": [

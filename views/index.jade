@@ -1,2 +1,31 @@
-h1= title
-p Welcome to the future home of #{title}
+!!!
+html
+  head
+    title #{title} - #{subtitle}
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+            span.i-bar
+              i.icon-chevron-down.icon-white
+          a.brand(href='/')= title 
+          .nac-collapse
+            ul.nav
+              li.active
+                a(href='/') Home
+              li
+                a(href='/about') About
+    .container
+      .hero-unit.welcome-box
+        h1 Welcome!
+        p future site of the
+        h2 #{subtitle}
+        p
+          a.btn.btn-primary.btn-large(href='/login') Start >>
+
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
+    script(src="/bootstrap/js/bootstrap.min.js")

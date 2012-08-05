@@ -4,5 +4,6 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'The Ark: a Bnei Noach Database' })
+  res.render('index', { title: 'The Ark', subtitle: 'Bnei Noach Database' });
+  //res.render('index');
 };
