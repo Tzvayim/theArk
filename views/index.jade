@@ -10,15 +10,26 @@ html
       .navbar-inner
         .container
           a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
-            span.i-bar
-              i.icon-chevron-down.icon-white
-          a.brand(href='/')= title 
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href='#')= title
           .nav-collapse
             ul.nav
               li.active
-                a(href='/') Home
+                a(href='#') Home
               li
-                a(href='/about') About
+                a(href='#') About
+            ul.nav.pull-right
+              li
+                a(href='#') Sign Up
+              li.divider-vertical
+              li.dropdown
+                a.dropdown-toggle(data-toggle='dropdown', href='#') Sign In
+                  b.caret
+                ul.dropdown-menu.pull-right
+                  li
+                    a(href='#') Sign In
     .container
       .hero-unit.welcome-box
         h1 Welcome!
