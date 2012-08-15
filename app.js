@@ -6,6 +6,8 @@
 var express = require('express')
   , routes = require('./routes')
   , http = require('http')
+  , passport = require('passport')
+  , nano = require('nano')
   , path = require('path');
 
 var app = express();
@@ -20,6 +22,8 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(express.cookieParser('your secret here'));
   app.use(express.session());
+  app.use(passport.initialize());
+  app.use(passport.session());
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
 });
