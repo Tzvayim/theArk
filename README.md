@@ -11,3 +11,4 @@ for bnei Noach around the world
     - use [Unhosted](http://unhosted.org/)
 - search for other users
 - Google Maps API implementation for visual search
+- heatmap on frontpage under hero div
