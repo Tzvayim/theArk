@@ -24,14 +24,18 @@ html
                 a(href='#') Blog
             ul.nav.pull-right
               li.divider-vertical
-              li.dropdown
-                a.dropdown-toggle(data-toggle='dropdown', href='#') Sign In
-                  b.caret
-                ul.dropdown-menu.pull-right
-                  li
-                    a(href='#') Sign In with Twitter
-                  li
-                    a(href='#') Sign In with Facebook
+                if !user
+                  li.dropdown
+                    a.dropdown-toggle(data-toggle='dropdown', href='#') Sign In
+                      b.caret
+                    ul.dropdown-menu.pull-right
+                      li
+                        a(href='/auth/twitter') Sign In with Twitter
+                      li
+                        a(href='#') Sign In with Facebook
+                else
+                  li.dropdown
+                    a.dropdown-toggle(data-toggle='dropdown', href='#') #{user.username}
     .container
       .hero-unit.welcome-box
         h1 Welcome!

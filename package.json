@@ -21,6 +21,7 @@
     "express": "~3",
     "jade": "*",
     "passport": "*",
+    "passport-twitter": "*",
     "nano": "*"
   },
   "devDependencies": {},
