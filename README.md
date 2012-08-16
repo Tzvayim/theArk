@@ -12,3 +12,7 @@ for bnei Noach around the world
 - search for other users
 - Google Maps API implementation for visual search
 - heatmap on frontpage under hero div
+
+## Todo
+
+- add url callbacks depending on development or production
