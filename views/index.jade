@@ -35,7 +35,11 @@ html
                         a(href='#') Sign In with Facebook
                 else
                   li.dropdown
-                    a.dropdown-toggle(data-toggle='dropdown', href='#') #{user.username}
+                    a.dropdown-toggle(data-toggle='dropdown', href='#') #{user.username} 
+                      b.caret
+                    ul.dropdown-menu.pull-right
+                      li
+                        a(href='/logout') Sign Out
     .container
       .hero-unit.welcome-box
         h1 Welcome!
