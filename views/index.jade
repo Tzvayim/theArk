@@ -1,45 +1,5 @@
-!!!
-html
-  head
-    title #{title} - #{subtitle}
-    link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.min.css')
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.brand(href='#')= title
-          .nav-collapse
-            ul.nav
-              li.active
-                a(href='#') Home
-              li
-                a(href='#') About
-              li
-                a(href='#') Blog
-            ul.nav.pull-right
-              li.divider-vertical
-                if !user
-                  li.dropdown
-                    a.dropdown-toggle(data-toggle='dropdown', href='#') Sign In
-                      b.caret
-                    ul.dropdown-menu.pull-right
-                      li
-                        a(href='/auth/twitter') Sign In with Twitter
-                      li
-                        a(href='#') Sign In with Facebook
-                else
-                  li.dropdown
-                    a.dropdown-toggle(data-toggle='dropdown', href='#') #{user.username} 
-                      b.caret
-                    ul.dropdown-menu.pull-right
-                      li
-                        a(href='/logout') Sign Out
+extends layout
+block content
     .container
       .hero-unit.welcome-box
         h1 Welcome!
@@ -47,6 +7,3 @@ html
         h2 #{subtitle}
         p
           a.btn.btn-primary.btn-large(href='#') Start >>
-
-    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
-    script(src="/bootstrap/js/bootstrap.min.js")
