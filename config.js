@@ -1,15 +1,29 @@
-// fill out with your own keys
-
 var config = {
 	'development': {
-		TWITTER_CONSUMER_KEY: "",
-		TWITTER_CONSUMER_SECRET: "",
-		callbackURL: ""
+		'twitter': {
+			TWITTER_CONSUMER_KEY: "",
+			TWITTER_CONSUMER_SECRET: ""
+		},
+		'couchdb': {
+			callbackURL: "",
+			couchdbURL: ""
+		},
+		'express': {
+			secret: ""
+		}	
 	},
 	'production': {
-		TWITTER_CONSUMER_KEY: "",
-		TWITTER_CONSUMER_SECRET: "",
-		callbackURL: ""
+		'twitter': {
+			TWITTER_CONSUMER_KEY: "",
+			TWITTER_CONSUMER_SECRET: ""
+		},
+		'couchdb': {
+			callbackURL: "",
+			couchdbURL: ""
+		},
+		'express': {
+			secret: ""
+		}	
 	}
 }
 
