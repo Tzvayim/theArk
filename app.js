@@ -17,9 +17,9 @@ var express = require('express')
 var app = express();
 
 passport.use(new twitterStrat({
-    consumerKey: config.TWITTER_CONSUMER_KEY,
-    consumerSecret: config.TWITTER_CONSUMER_SECRET,
-    callbackURL: config.callbackURL
+    consumerKey: config.twitter.TWITTER_CONSUMER_KEY,
+    consumerSecret: config.twitter.TWITTER_CONSUMER_SECRET,
+    callbackURL: config.twitter.callbackURL
   },
   function(token, tokenSecret, profile, done) {
     process.nextTick(function () {
@@ -45,7 +45,7 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.cookieParser());
-  app.use(express.session({ secret:'keyboard cat'}));
+  app.use(express.session( config.express.secret ));
   app.use(passport.initialize());
   app.use(passport.session());
   app.use(app.router);
