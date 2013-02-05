@@ -11,14 +11,12 @@ var express = require('express')
   , twitterStrat = require('passport-twitter').Strategy
   , nano = require('nano')
   , path = require('path')
-//	, config = require('./config')[process.env.NODE_ENV || 'production']
 	, config = require('./config')
 	;
 
 var app = express();
 
 app.configure('production', function(){
-  //nano = nano('http://nodejitsudb7653225711.iriscouch.com:5984/theark');
 	config = config['production']
   nano = nano(config.couchdb.couchdbURL)
 });
