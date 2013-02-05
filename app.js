@@ -11,10 +11,24 @@ var express = require('express')
   , twitterStrat = require('passport-twitter').Strategy
   , nano = require('nano')
   , path = require('path')
-	, config = require('./config')[process.env.NODE_ENV || 'production']
+//	, config = require('./config')[process.env.NODE_ENV || 'production']
+	, config = require('./config')
 	;
 
 var app = express();
+
+app.configure('production', function(){
+  //nano = nano('http://nodejitsudb7653225711.iriscouch.com:5984/theark');
+	config = config['production']
+  nano = nano(config.couchdb.couchdbURL)
+});
+
+app.configure('development', function(){
+  app.use(express.errorHandler());
+  app.locals.pretty = true;
+	config = config['development']
+  nano = nano(config.couchdb.couchdbURL)
+});
 
 passport.use(new twitterStrat({
     consumerKey: config.twitter.TWITTER_CONSUMER_KEY,
@@ -50,16 +64,6 @@ app.configure(function(){
   app.use(passport.session());
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
-});
-
-app.configure('production', function(){
-  nano = nano('http://nodejitsudb7653225711.iriscouch.com:5984/theark');
-});
-
-app.configure('development', function(){
-  app.use(express.errorHandler());
-  app.locals.pretty = true;
-  nano = nano('http://localhost:5984/theark');
 });
 
 function ensureAuthenticated(req, res, next) {
