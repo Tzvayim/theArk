@@ -4,40 +4,50 @@
  */
 
 var express = require('express')
-  , routes = require('./routes')
-  , http = require('http')
-  , util = require('util') // seems to be needed to keep session timeout low
-  , passport = require('passport')
-  , twitterStrat = require('passport-twitter').Strategy
-  , nano = require('nano')
-  , path = require('path')
+	, routes = require('./routes')
+	, http = require('http')
+	, util = require('util') // seems to be needed to keep session timeout low
+	, passport = require('passport')
+	, twitterStrat = require('passport-twitter').Strategy
+	, nano = require('nano')
+	, path = require('path')
 	, config = require('./config')
-	;
+	, fs = require('fs')
 
 var app = express();
 
 app.configure('production', function(){
 	config = config['production']
-  nano = nano(config.couchdb.couchdbURL)
+	nano = nano(config.couchdb.couchdbURL)
 });
 
 app.configure('development', function(){
-  app.use(express.errorHandler());
-  app.locals.pretty = true;
+	app.use(express.errorHandler());
+	app.locals.pretty = true;
 	config = config['development']
-  nano = nano(config.couchdb.couchdbURL)
+	nano = nano(config.couchdb.couchdbURL)
+});
+
+//Database Initializer
+nano.db.create('the_ark', function(err, body) {
+	if (!err) {
+		console.log('database the_ark created');
+	}
+	else {
+		console.error(err)
+	}
 });
 
 passport.use(new twitterStrat({
-    consumerKey: config.twitter.TWITTER_CONSUMER_KEY,
-    consumerSecret: config.twitter.TWITTER_CONSUMER_SECRET,
-    callbackURL: config.twitter.callbackURL
-  },
-  function(token, tokenSecret, profile, done) {
-    process.nextTick(function () {
-      return done(null, profile);
-    })
-  })
+		consumerKey: config.twitter.TWITTER_CONSUMER_KEY,
+		consumerSecret: config.twitter.TWITTER_CONSUMER_SECRET,
+		callbackURL: config.twitter.callbackURL
+	},
+	function(token, tokenSecret, profile, done) {
+		process.nextTick(function () {
+		return done(null, profile);
+		})
+	})
 );
 
 passport.serializeUser(function(user, done) {
@@ -81,7 +91,8 @@ function isExistingUser(req, res, next) {
 app.get('/', routes.index);
 
 app.get('/profile', ensureAuthenticated, function(req, res) {
-  res.render("profile", { user: req.user, title: 'The Ark', subtitle: 'Bnei Noach Database' });
+	res.render("profile", { user: req.user, title: 'The Ark', subtitle: 'Bnei Noach Database' });
+	console.log(req.user)
 });
  
 app.get('/auth/twitter',
