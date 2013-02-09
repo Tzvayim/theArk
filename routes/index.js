@@ -1,7 +1,4 @@
-
-/*
- * GET home page.
- */
+var model = require('../models')
 
 exports.index = function(req, res){
   res.render('index', { user: req.user, title: 'The Ark', subtitle: 'Bnei Noach Database' });
