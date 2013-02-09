@@ -89,11 +89,13 @@ function isExistingUser(req, res, next) {
 };
 
 app.get('/', routes.index);
+app.get('/profile', ensureAuthenticated, routes.profile);
 
-app.get('/profile', ensureAuthenticated, function(req, res) {
-	res.render("profile", { user: req.user, title: 'The Ark', subtitle: 'Bnei Noach Database' });
+/*
+app.get('/profile', ensureAuthenticated, function(req, res) { res.render("profile", { user: req.user, title: 'The Ark', subtitle: 'Bnei Noach Database' });
 	console.log(req.user)
 });
+*/
  
 app.get('/auth/twitter',
   passport.authenticate('twitter'),
