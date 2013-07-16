@@ -9,6 +9,8 @@ var config = {
 			couchdbURL: ""
 		},
 		'express': {
+			'title': "The Ark",
+			'subtitle': "Bnei Noach Database",
 			'session': {
 				secret: ""
 			}
@@ -24,6 +26,8 @@ var config = {
 			couchdbURL: ""
 		},
 		'express': {
+			'title': "The Ark",
+			'subtitle': "Bnei Noach Database",
 			'session': {
 				secret: ""
 			}
