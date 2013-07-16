@@ -1,7 +1,4 @@
-
-/**
- * Module dependencies.
- */
+// Module dependencies
 
 var express = require('express')
 	, routes = require('./routes')
@@ -12,7 +9,6 @@ var express = require('express')
 	, nano = require('nano')
 	, path = require('path')
 	, config = require('./config')
-	, fs = require('fs')
 
 var app = express();
 
@@ -81,6 +77,7 @@ function ensureAuthenticated(req, res, next) {
 
 function isExistingUser(req, res, next) {
   //if (){};
+	//head is called to just return headers; faster than a get
   db.head('rabbit', function(err, _, headers) {
     if (!err)
     console.log(headers);
@@ -91,12 +88,6 @@ function isExistingUser(req, res, next) {
 app.get('/', routes.index);
 app.get('/profile', ensureAuthenticated, routes.profile);
 
-/*
-app.get('/profile', ensureAuthenticated, function(req, res) { res.render("profile", { user: req.user, title: 'The Ark', subtitle: 'Bnei Noach Database' });
-	console.log(req.user)
-});
-*/
- 
 app.get('/auth/twitter',
   passport.authenticate('twitter'),
   function(req, res) {
@@ -120,5 +111,5 @@ app.get('/logout', function(req, res) {
 );
 
 http.createServer(app).listen(app.get('port'), function(){
-  console.log("Express server listening on port " + app.get('port'));
+	console.log("Express server listening on port " + app.get('port'));
 });

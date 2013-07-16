@@ -1,0 +1,21 @@
+extends layout
+block content
+	.container.hero-unit.welcome-box
+		form
+			div.controls
+				.controls-row
+					input.span5(type='text', placeholder='username', disabled)
+				.controls-row
+					input.span5(type='email', placeholder='email@address.com', required)
+				.controls-row
+					input.span2(type='text', placeholder='First Name')
+					input.span3(type='text', placeholder='Last Name')
+				.controls-row
+					input.span5(type='text', placeholder='Address')
+				.controls-row
+					input.span2(type='text', placeholder='City')
+					input.span1(type='text', placeholder='State')
+					input.span2(type='text', placeholder='ZIP')
+				.form-actions
+					button.btn.btn-primary(type='submit') Save
+					button.btn(type='button') Cancel
